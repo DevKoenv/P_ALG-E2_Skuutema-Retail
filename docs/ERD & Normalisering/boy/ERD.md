@@ -110,16 +110,16 @@ erDiagram
         int bestelling_id FK
     }
 
-    Winkels ||--o{ Bestellingen : heeft
-    Winkels ||--o{ Klachten : ontvangt
-    Winkels ||--o{ KPI : heeft
-    Winkels ||--o{ Personeel : beheert
-    Winkels ||--o{ Leveringen : ontvangt
-    Producten ||--o{ Bestellingproducten : bevat
-    Producten ||--o{ Leveringproducten : bevat
-    Distributeurs ||--o{ DistributeurProducten : levert
-    Distributeurs ||--o{ DistributeurBestelling : verwerkt
-    Bestellingen ||--o{ Bestellingproducten : bevat
-    Leveringen ||--o{ Leveringproducten : bevat
-    Personeel ||--o{ Personeels_planning : heeft
+    Winkels ||--o{ Bestellingen
+    Winkels ||--o{ Klachten
+    Winkels ||--o{ KPI
+    Winkels ||--o{ Personeel
+    Winkels ||--o{ Leveringen
+    Producten ||--o{ Bestellingproducten
+    Producten ||--o{ Leveringproducten
+    Distributeurs ||--o{ DistributeurProducten
+    Distributeurs ||--o{ DistributeurBestelling
+    Bestellingen ||--o{ Bestellingproducten
+    Leveringen ||--o{ Leveringproducten
+    Personeel ||--o{ Personeels_planning
 ```
