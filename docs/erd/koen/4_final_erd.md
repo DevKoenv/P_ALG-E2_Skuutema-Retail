@@ -3,10 +3,9 @@ erDiagram
     Winkels {
         int Winkel_ID PK
         string Winkelnaam
-        string Locatie
         string Adres
         string Postcode
-        string Regio
+        float Oppervlakte
     }
 
     Producten {
@@ -58,19 +57,28 @@ erDiagram
     Klachten {
         int Klacht_ID PK
         int Winkel_ID FK
+        int Opgelost_door FK
         string Categorie
         string Beschrijving
         date Datum
         time Tijd
         string Status
         date Oplossingsdatum
+        string Oplossing_beschrijving
     }
 
-    KPI {
-        int KPI_ID PK
+    KPI_Types {
+        int KPI_Type_ID PK
+        string Naam
+        string Eenheid
+        string Beschrijving
+    }
+
+    KPI_Metingen {
+        int Meting_ID PK
         int Winkel_ID FK
-        string KPI
-        string Waarde
+        int KPI_Type_ID FK
+        float Waarde
         string Periode
     }
 
@@ -80,4 +88,6 @@ erDiagram
     Bestellingen ||--o{ Bestellingproducten : bevat
     Gebruikers ||--o{ Winkels : beheert
     Winkels ||--o{ Klachten : ontvangt
-    Winkels ||--o{ KPI : heeft
+    Gebruikers ||--o{ Klachten : lost_op
+    Winkels ||--o{ KPI_Metingen : heeft
+    KPI_Types ||--o{ KPI_Metingen : definieert

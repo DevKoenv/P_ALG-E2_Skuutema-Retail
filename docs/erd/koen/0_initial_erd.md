@@ -4,7 +4,6 @@
 - Winkelnaam
 - Locatie (stad)
 - Adres (straat, huisnummer, postcode)
-- Regio
 
 ---
 

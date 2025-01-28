@@ -2,9 +2,9 @@
 
 ## **Winkellocaties**
 
-| **Winkel_ID** | **Winkelnaam**               | **Locatie**   | **Adres**                 | **Postcode** | **Regio**          |
-|---------------|------------------------------|---------------|---------------------------|---------------|--------------------|
-| 1             | Skuutema Retail Hoofdkantoor | Amsterdam     | Keizersgracht 123         | 1015 CJ       | Noord-Holland      |
+| **Winkel_ID** | **Winkelnaam**               | **Locatie**   | **Adres**                 | **Postcode** |
+|---------------|------------------------------|---------------|---------------------------|---------------|
+| 1             | Skuutema Retail Hoofdkantoor | Amsterdam     | Keizersgracht 123         | 1015 CJ       |
 
 ---
 
@@ -49,9 +49,9 @@
 ## **Klachten**
 
 **Klachten:**
-| **Klacht_ID** | **Winkel_ID** | **Categorie** | **Beschrijving**        | **Datum**   | **Tijd** | **Status**    | **Oplossingsdatum** |
-|---------------|---------------|---------------|-------------------------|-------------|----------|---------------|---------------------|
-| 1             | 1             | Product       | Beschadigde verpakking  | 2025-01-26  | 15:00    | Opgelost      | 2025-01-27          |
+| **Klacht_ID** | **Winkel_ID** | **Categorie** | **Beschrijving**        | **Datum**   | **Tijd** | **Status**    | **Oplossingsdatum** | **Opgelost_door** | **Oplossing_beschrijving** |
+|---------------|---------------|---------------|-------------------------|-------------|----------|---------------|---------------------|-------------------|----------------------------|
+| 1             | 1             | Product       | Beschadigde verpakking  | 2025-01-26  | 15:00    | Opgelost      | 2025-01-27          | 1                 | Product vervangen          |
 
 **Klachtproducten**
 | **Klacht_ID** | **Product_ID** |
@@ -60,8 +60,17 @@
 
 ---
 
-## **KPI's en Managementdata**
+## **KPI Definities**
 
-| **KPI_ID** | **Winkel_ID** | **KPI**                      | **Waarde** | **Periode**    |
-|------------|---------------|------------------------------|------------|----------------|
-| 1          | 1             | Omzet per vierkante meter   | €500/m²    | Januari 2025   |
+| **KPI_Type_ID** | **Naam**                    | **Eenheid** | **Beschrijving**                    |
+|-----------------|----------------------------|-------------|-------------------------------------|
+| 1               | Omzet per vierkante meter  | EUR/m²      | Totale omzet gedeeld door opp      |
+| 2               | Voorraadnauwkeurigheid     | %           | Percentage correcte voorraadtelling |
+| 3               | Winstmarge                 | %           | Percentage winst op verkoop         |
+
+## **KPI Metingen**
+
+| **Meting_ID** | **Winkel_ID** | **KPI_Type_ID** | **Waarde** | **Periode**    |
+|---------------|---------------|-----------------|------------|----------------|
+| 1             | 1             | 1               | 500        | Januari 2025   |
+| 2             | 1             | 2               | 98.5       | Januari 2025   |
