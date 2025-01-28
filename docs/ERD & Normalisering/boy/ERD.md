@@ -32,7 +32,7 @@ erDiagram
     Klachten {
         int id PK
         int winkel_id FK
-        int Klant_id FK
+        int Klantnaam
         string Categorie
         string Beschrijving
     }
@@ -48,8 +48,9 @@ erDiagram
     Personeel {
         int id PK
         string Naam
-        string Rol
+        string Wachtwoord
         int winkel_id FK
+        string Rol
     }
 
     Distributeurs {
@@ -60,17 +61,11 @@ erDiagram
         string email
     }
 
-    Gebruikers {
-        int id PK
-        string Gebruikersnaam
-        string Wachtwoord
-        string Rol
-    }
-
     Meldingen {
         int id PK
         string Beschrijving
         datetime Datum_tijd
+        string Afgehandeld
     }
 
     Rapporten {
@@ -122,4 +117,5 @@ erDiagram
     Bestellingen ||--o{ Bestellingproducten : bevat
     Leveringen ||--o{ Leveringproducten : bevat
     Personeel ||--o{ Personeels_planning : heeft
+    Meldingen ||--o{ Rapporten : bevat
 ```
