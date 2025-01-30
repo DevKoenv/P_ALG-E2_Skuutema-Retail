@@ -1,13 +1,5 @@
+```mermaid
 erDiagram
-    Stores {
-        int store_id PK
-        string name
-        string location
-        string address
-        string opening_hours
-        string manager_name
-    }
-
     Products {
         int product_id PK
         string name
@@ -136,3 +128,4 @@ erDiagram
     Deliveries ||--o{ DeliveryProducts : contains
     Personnel ||--o{ Schedules : works_on
     Notifications ||--o{ Reports : contains
+```
