@@ -2,9 +2,9 @@
 
 ## **Winkellocaties**
 
-| **Winkel_ID** | **Winkelnaam**              | **Locatie** | **Adres**         | **Postcode** | **Regio**      |
-|---------------|----------------------------|-------------|-------------------|--------------|----------------|
-| 1             | Skuutema Retail Hoofdkantoor | Amsterdam   | Keizersgracht 123 | 1015 CJ      | Noord-Holland  |
+| **Winkel_ID** | **Winkelnaam**              | **Locatie** | **Adres**         | **Postcode** |
+|---------------|----------------------------|-------------|-------------------|--------------|
+| 1             | Skuutema Retail Hoofdkantoor | Amsterdam   | Keizersgracht 123 | 1015 CJ      |
 
 ---
 
@@ -62,6 +62,14 @@
 
 ## **KPI's**
 
-| **KPI_ID** | **Winkel_ID** | **KPI**                    | **Waarde** | **Periode**    |
-|------------|---------------|----------------------------|------------|----------------|
-| 1          | 1             | Omzet per vierkante meter  | €500/m²    | Januari 2025   |
+**KPI_Definities:**
+| KPI_Type_ID | Naam                      | Eenheid  | Beschrijving           |
+|-------------|---------------------------|----------|------------------------|
+| 1           | Omzet per vierkante meter | EUR/m²   | Omzet gedeeld door... |
+| 2           | Voorraadnauwkeurigheid    | %        | Percentage correct... |
+
+**KPI_Metingen:**
+| Meting_ID | Winkel_ID | KPI_Type_ID | Waarde | Periode      |
+|-----------|-----------|-------------|---------|--------------|
+| 1         | 1         | 1           | 500     | Januari 2025 |
+| 2         | 1         | 2           | 98.5    | Januari 2025 |

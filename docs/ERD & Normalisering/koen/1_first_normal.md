@@ -2,9 +2,9 @@
 
 ## **Winkellocaties**
 
-| Winkel_ID | Winkelnaam               | Locatie   | Adres                     | Postcode  | Regio          |
-|-----------|--------------------------|-----------|---------------------------|-----------|----------------|
-| 1         | Skuutema Retail Hoofdkantoor | Amsterdam | Keizersgracht 123     | 1015 CJ   | Noord-Holland  |
+| Winkel_ID | Winkelnaam               | Locatie   | Adres                     | Postcode  |
+|-----------|--------------------------|-----------|---------------------------|-----------|
+| 1         | Skuutema Retail Hoofdkantoor | Amsterdam | Keizersgracht 123     | 1015 CJ   |
 
 ---
 
