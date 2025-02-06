@@ -29,10 +29,13 @@ erDiagram
     Bestellingen {
         int Bestel_ID PK
         int Winkel_ID FK
-        date Datum
-        time Tijd
-        string Status
+        int Distributeur_ID FK
+        date Besteldatum
+        time Besteltijd
         date Leverdatum
+        string Status
+        string Tracking_Number
+        string Leveringsstatus
         string Bezorgschema
     }
 
@@ -41,16 +44,17 @@ erDiagram
         int Product_ID FK
         int Hoeveelheid
         float Totale_prijs
+        int Aantal_geleverd
     }
 
     Gebruikers {
         int Gebruiker_ID PK
-        string Gebruikersnaam
         string Naam
         string Email
         string Telefoonnummer
         string Wachtwoord
         string Rol
+        date Datum_in_dienst
         int Winkel_ID FK
     }
 
@@ -82,12 +86,45 @@ erDiagram
         string Periode
     }
 
+    Distributeurs {
+        int Distributeur_ID PK
+        string Naam
+        string Adres
+        string Telefoonnummer
+        string Email
+    }
+
+    Meldingen {
+        int Melding_ID PK
+        string Beschrijving
+        datetime Datum_tijd
+        string Status
+    }
+
+    Rapporten {
+        int Rapport_ID PK
+        string Titel
+        string Beschrijving
+        date Datum
+        string Type
+        int Gerelateerd_ID FK
+    }
+
     Winkels ||--o{ Voorraad : heeft
-    Producten ||--o{ Voorraad : omvat
-    Voorraad ||--o{ Bestellingproducten : bevat
-    Bestellingen ||--o{ Bestellingproducten : bevat
-    Gebruikers ||--o{ Winkels : beheert
+    Winkels ||--o{ Bestellingen : plaatst
     Winkels ||--o{ Klachten : ontvangt
-    Gebruikers ||--o{ Klachten : lost_op
     Winkels ||--o{ KPI_Metingen : heeft
+    Winkels ||--o{ Gebruikers : beheert
+
+    Gebruikers ||--o{ Klachten : lost_op
+    Gebruikers ||--o{ Meldingen : ontvangt
+
+    Producten ||--o{ Voorraad : omvat
+    Producten ||--o{ Bestellingproducten : bevat
+
+    Bestellingen ||--o{ Bestellingproducten : bevat
+    Distributeurs ||--o{ Bestellingen : verwerkt
+
     KPI_Types ||--o{ KPI_Metingen : definieert
+
+    Meldingen ||--o{ Rapporten : bevat
